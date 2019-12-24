@@ -1,0 +1,103 @@
+///*PAGE*/
+html,
+body {
+	// line-height: 1.2em;
+	color: $color-text;
+
+// font-family: $font-primary;
+	// font-size: $font-size-base;
+
+	font-family: 'Bitter', serif;
+
+	font-display: swap;
+}
+
+// ## PAGE
+// ## HEADINGS
+
+h1,
+.h1 {
+	margin: 0;
+	padding: 0;
+}
+
+// ## TYPE
+p {
+	max-width: $max-width;
+	margin-bottom: 2em;
+
+	line-height: 1.5em;
+}
+
+small {
+	font-size: .8em;
+}
+
+// ## LINKS
+a,
+.basic-link {
+	&,
+	&:link,
+	&:visited {
+		cursor: pointer;
+		transition: $default-transition;
+		text-decoration: none;
+
+		color: currentColor;
+	}
+
+	&:hover,
+	&:active {
+		text-decoration: none;
+
+		color: $color-primary;
+	}
+}
+
+.basic-link {
+	padding: 0 $default-padding/2;
+}
+
+
+
+// ## LISTS
+ul,
+li {
+	@include reset;
+}
+
+ul {
+	list-style: none;
+}
+
+
+
+// ## IMAGES
+img {
+	width: 100%;
+	max-width: 100%;
+}
+
+// ## SVG
+text {
+	font-size: 14px;
+
+@include unselectable;
+}
+
+// ## QUOTES
+//## SELECTIONS
+//## SELECTIONS
+::selection {
+	color: #FFFFFF;
+	background: $color-primary;
+}
+
+//## FORMS
+label {
+	margin-bottom: 0; //sobreescribimos el de bootstrap
+}
+
+:focus {
+	outline: none;
+}

@@ -1,0 +1,102 @@
+.btn {
+	padding: $default-padding/2;
+
+	&,
+	&:link,
+	&:visited {
+		display: inline-block;
+
+		padding: $default-padding/2 $default-padding*1.5;
+
+		cursor: pointer;
+		transition: $default-transition;
+		text-align: center;
+		text-decoration: none;
+
+		color: $white;
+		border: none;
+		background: #6E4E82;
+		box-shadow: 0 0 0 transparent;
+	}
+
+	&:hover,
+	&:active {
+		text-decoration: none;
+
+		background: #6E4E82;
+		box-shadow: 0 5px 5px rgba(black, .5);
+	}
+
+	&--solution {
+		&,
+		&:link,
+		&:visited {
+			margin-bottom: $default-padding*2;
+
+			cursor: pointer;
+
+			color: #E37222;
+			border: 1px solid #E37222;
+			background: rgba(0,0,0, .5);
+			box-shadow: 0 0 0 transparent;
+		}
+		&:hover,
+		&:active {
+			text-decoration: none;
+
+			color: white;
+			background: #E37222;
+			box-shadow: 0 5px 5px rgba(black, .5);
+		}
+	}
+}
+
+// .btn--primary {
+// 	@include make-button-variant($brand-primary, $brand-primary, );
+// }
+
+// .btn--round {
+// 	$btnTam: 2.2em;
+// 	--miTam: 2.2em;
+// 	width: $btnTam;
+// 	width: var(--miTam);
+// 	height: $btnTam;
+// 	height: var(--miTam);
+// 	line-height: $btnTam;
+// 	line-height: var(--miTam);
+// 	border-radius: 100%;
+// }
+
+// .btn--outline {
+
+// 	&,
+// 	&:link,
+// 	&:visited {
+// 		border: 1px solid currentColor;
+// 		background: transparent;
+// 	}
+
+// 	&:hover,
+// 	&:active {
+
+// 		background: rgba($brand-primary, 0.2);
+// 	}
+// }
+
+// .btn--primary.btn--outline {
+// 	color: $brand-primary;
+// }
+
+// .btn--rounded {
+// 	border-radius: 100px;
+// }
+
+// .btn--lg {
+// 	font-size: 1.2em;
+// 	padding: $default-padding/2 $default-padding*2;
+// }
+
+// .btn--round.btn--round.btn--round {
+// 	// box-sizing: border-box;
+// 	padding: $default-padding/3;
+// }

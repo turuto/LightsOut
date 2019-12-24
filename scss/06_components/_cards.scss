@@ -1,0 +1,356 @@
+.cards {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.card {
+	overflow: hidden;
+
+	margin: $default-padding 0;
+
+	border: 1px solid $grey2;
+	background: $white;
+
+	@media (min-width:$breakpoint--lg) {
+		max-width: 28%;
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: row;
+
+		justify-content: flex-start;
+		align-items: stretch;
+
+		@media (min-width:$breakpoint--lg) {
+			flex-direction: column;
+		}
+	}
+
+	&__body {
+		flex: 1 1 auto;
+
+		padding: 20px;
+	}
+
+	&__img {
+		line-height: 0;
+
+		position: relative;
+
+		overflow: hidden;
+
+		margin: 0;
+		padding: 0;
+
+		/*&:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			display: block;
+
+			content: '';
+			transition: $default-transition;
+
+			opacity: .2;
+			background: linear-gradient(315deg, rgba($brand-primary, .6), rgba($secondary-color, .6));
+
+			mix-blend-mode: overlay;
+		}*/
+
+		img {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+
+			transition: $default-transition;
+
+			filter: grayscale(0);
+			object-fit: cover;
+		}
+	}
+}
+
+.card__link {
+	.card__img:before {
+		font: normal normal normal 24px/1 'Material Design Icons';
+		font-size: 3em;
+
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: flex;
+
+		content: '\F349';
+		transition: $default-transition;
+		text-align: center;
+
+		opacity: 0;
+		color: $white;
+		background: linear-gradient(315deg, rgba($brand-primary, .7), rgba($secondary-color, .7));
+		text-shadow: $default-shadow;
+
+		justify-content: center;
+		align-items: center;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		mix-blend-mode: multiply;
+	}
+}
+
+.card__link:hover {
+	//los enlaces les ponemos una lupa en el hover
+	img {
+		filter: grayscale(1);
+	}
+
+	.card__img:before {
+		opacity: 1;
+	}
+}
+
+.card--main {
+	width: 100%;
+
+//en la card ppal, siempre la vemos en horizontal
+	max-width: unset;
+	margin: $default-padding 0;
+
+	.card__link {
+		@media (min-width:$breakpoint--md) {
+			flex-direction: row;
+		}
+	}
+
+	.card__img {
+		@media (min-width:$breakpoint--md) {
+			// min-width: 34%;
+		}
+	}
+}
+
+.card__title {
+	font-size: 1.3em;
+
+	margin-top: 0;
+	margin-bottom: .5em;
+
+	&:after {
+		display: block;
+
+		width: 20%;
+		height: 3px;
+		margin-top: .8em;
+		margin-right: auto;
+
+		content: '';
+
+		background: #D30031;
+	}
+}
+
+.card__date {
+	font-size: .8em;
+	font-style: italic;
+
+	opacity: .8;
+}
+
+//LAS VARIANTES DE LAS CARDS SON LOS CURSOS
+
+// .cards {
+// 	overflow: hidden;
+
+// 	max-width: $max-width;
+// 	min-height: 120px;
+// 	margin-right: auto;
+// 	margin-left: auto;
+
+// 	flex-wrap: wrap;
+
+// 	& .card:first-child {
+// 		padding-right: 0;
+// 	}
+// }
+
+// .card {
+// 	box-sizing: border-box;
+// 	width: 100%;
+// 	min-height: 212px;
+// 	margin: $default-padding 0;
+
+// 	transition: $default-transition;
+
+// // pointer-events: none;
+
+// 	border: 1px solid transparent;
+// 	border-left-width: 4px;
+// 	box-shadow: $default-shadow;
+// }
+
+// .card__img {
+// 	position: relative;
+
+// 	width: calc(100% + 5px);
+// 	height: 5rem;
+// 	margin-top: -2px;
+// 	margin-left: -5px;
+
+// 	transition: $default-transition;
+
+// 	img {
+// 		width: 100%;
+// 		height: 100%;
+
+// 		object-fit: cover;
+// 	}
+
+// 	&:after {
+// 		position: absolute;
+// 		z-index: 1;
+// 		top: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		left: 0;
+
+// 		display: block;
+
+// 		content: '';
+// 		transition: inherit;
+
+// 		background: linear-gradient(315deg, rgba($brand-primary, .6), rgba($secondary-color, .6));
+// 		;
+// 	}
+// }
+
+// .card:hover {
+// 	border-color: $grey2;
+// 	border-left-color: $brand-primary;
+// 	box-shadow: $wide-shadow;
+
+// 	.card__img:after {
+// 		// bottom: 100%;
+// 		opacity: 0;
+// 	}
+// }
+
+// .card__body {
+// 	padding: $default-padding/2;
+// }
+
+// @media(min-width:880px) {
+// 	.cards {
+// 		display: flex;
+// 		flex-direction: row;
+
+// 		justify-content: space-between;
+// 		align-items: flex-start;
+// 	}
+
+// 	.card {
+// 		max-width: 300px;
+// 	}
+
+// 	.card:first-child {
+// 		flex: 1 1 100%;
+
+// 		// padding-right: 2em;
+// 	}
+// }
+
+// .card__link {
+// 	&:hover,
+// 	&:active,
+// 	&:focus {
+// 		.card__title {
+// 			color: inherit;
+// 		}
+// 	}
+// }
+
+// .card--main {
+// 	width: 100%;
+// 	min-width: 100%;
+
+// 	.card__link {
+// 		display: flex;
+// 		flex-direction: row;
+
+// 		outline: 1px solid fuchsia;
+
+// 		justify-content: space-between;
+// 		align-items: stretch;
+// 	}
+
+// 	.card__img {
+// 		height: unset;
+
+// 		background: lime;
+// 	}
+// }
+
+// .card--naked {
+// 	background: teal;
+
+// 	&,
+// 	&:hover {
+// 		border: none;
+// 		box-shadow: none;
+// 	}
+
+// 	.card__link {
+// 		display: flex;
+// 		flex-direction: column;
+
+// 		justify-content: flex-start;
+// 		align-items: stretch;
+
+// 		@media (min-width:703px) {
+// 			flex-direction: row;
+// 		}
+// 	}
+// }
+
+// .card__date {
+// 	font-size: .8em;
+// 	font-style: italic;
+
+// 	opacity: .8;
+// }
+
+// .news {
+// 	.card__img {
+// 		height: unset;
+// 	}
+
+// 	.card__title {
+// 		font-size: 1.3em;
+
+// 		margin-bottom: .5em;
+
+// 		&:after {
+// 			display: block;
+
+// 			width: 20%;
+// 			height: 3px;
+// 			margin-top: .8em;
+// 			margin-right: auto;
+
+// 			content: '';
+
+// 			background: #D30031;
+// 		}
+// 	}
+// }

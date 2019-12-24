@@ -1,0 +1,142 @@
+.debug {
+	outline: 1px solid fuchsia !important;
+	outline-style: solid !important;
+}
+
+.debug2 {
+	outline: 1px solid green !important;
+	outline-style: solid !important;
+}
+
+.debug3 {
+	outline: 1px solid cyan !important;
+	outline-style: solid !important;
+}
+
+.debug4 {
+	outline: 1px solid tomato !important;
+	outline-style: solid !important;
+}
+
+.debug5 {
+	outline: 1px solid lime !important;
+	outline-style: solid !important;
+}
+
+.debug6 {
+	outline: 1px solid blue !important;
+	outline-style: solid !important;
+}
+
+.conDebugs {
+	@extend .debug;
+	div {
+		@extend .debug2;
+	}
+	& > * {
+		@extend .debug3;
+	}
+}
+
+.hx-toolbar__btn[data-develop='true'] {
+	//outline:1px solid rgba(206,238,255,0.9);
+	text-decoration: line-through;
+}
+
+body.debug {
+	#m {
+		&,
+		* {
+			fill: lighten(yellowgreen, 20%) !important;
+			stroke: none !important;
+		}
+	}
+	#d {
+		&,
+		* {
+			fill: darken(yellowgreen, 10%) !important;
+			stroke: none !important;
+		}
+	}
+	#l {
+		&,
+		* {
+			fill: lightblue !important;
+			stroke: none !important;
+		}
+	}
+	#v {
+		&,
+		* {
+			fill: darken(lightblue, 20%) !important;
+			stroke: none !important;
+		}
+	}
+	#o {
+		&,
+		* {
+			fill: desaturate(lighten(tomato, 20%), 20%) !important;
+			stroke: none !important;
+		}
+	}
+	#r1 {
+		&,
+		* {
+			fill: burlywood !important;
+			stroke: none !important;
+		}
+	}
+	#r2 {
+		&,
+		* {
+			fill: darken(burlywood, 20%) !important;
+			stroke: none !important;
+		}
+	}
+	#r3 {
+		&,
+		* {
+			fill: darken(burlywood, 30%) !important;
+			stroke: none !important;
+		}
+	}
+	#dibujo {
+		&,
+		* {
+			fill: none !important;
+		}
+	}
+}
+
+.pendiente {
+	display: flex;
+	flex-direction: column;
+
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+
+	animation: blink-animation 1s steps(5, start) infinite;
+	text-align: center;
+	text-decoration: blink;
+	text-transform: uppercase;
+
+	color: #FFFFFF;
+	border-radius: 200px;
+	background: turquoise;
+
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}
+
+@-webkit-keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}

@@ -1,0 +1,36 @@
+
+.f-icon {
+  font-size: 1.8rem;
+  vertical-align: bottom;
+  position: relative;
+}
+.f-icon--inline {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+}
+.f-icon--with-badge {
+  padding-right: 1em;
+}
+.icon--color-sensible {
+  &:hover, &:active {
+    // color: @fenix-primary-color;
+  }
+}
+
+.icon--color-insensible {
+  &:hover, &:active {
+    color: $text-color;
+  }
+}
+.icon--disabled {
+  opacity: 0.2;
+  color: #000;
+}
+.icon--hidden {
+  display: none;
+}
+.icon--no-icon {
+  font-weight: 400;
+  font-size: 20px;
+}

@@ -1,0 +1,56 @@
+.hx-radio {
+	display: none;
+}
+
+.hx-radio__label {
+	display: inline-block;
+	display: inline-flex;
+
+	width: 100%;
+	padding-bottom: $default-padding/2;
+
+	cursor: pointer;
+	transition: background-position $default-transition;
+
+	background: linear-gradient(to right, $hx-brand-primary 50%, $gris 50%);
+	background-repeat: no-repeat;
+	background-position: 99% 98%;
+	background-size: 203% 3px;
+
+	align-self: center;
+	&:hover {
+		background-position: 0 98%;
+	}
+	/*&:before {
+        display: inline-block;
+        display: inline-flex;
+        align-self: center;
+        margin-right: $default-padding;
+        width: 1em;
+        height: 1em;
+        border-radius: 100%;
+        border: 1px solid white;
+        content: "";
+        transition: background 1s ease-out;
+        background: radial-gradient( transparent 0%, transparent 60%);
+
+    }*/
+}
+
+//cuando marcamos el radio
+.hx-radio:checked + .hx-radio__label {
+	font-weight: bold; // border-bottom-color:$hx-brand-primary ;
+
+	color: $hx-brand-primary;
+background-position: 0 98%;
+}
+
+/*
+.hx-radio:checked + .hx-radio__label {
+    color:$hx-brand-primary ;
+    font-weight: bold;
+    &:before{
+    background: radial-gradient( $hx-brand-primary  50%, transparent 60%);
+
+    }
+}*/

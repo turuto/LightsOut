@@ -1,0 +1,215 @@
+:root {
+	--gridSize: 5;
+	--stageSize: 100vh;
+}
+body {
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+
+	width: 100vw;
+	min-width: 100vw;
+	max-width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
+	margin: 0;
+	padding: 0;
+
+	background: $black;
+	background: url('../img/vigo_night.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.board {
+	position: relative;
+	z-index: 1;
+
+	display: flex;
+	zoom: .5;
+	align-items: stretch;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	width: calc((var(--cellSize) * var(--gridSize)) + 8em);
+
+	--cellSize: 3rem;
+	@media screen and(min-width: 227px) {
+		zoom: .7;
+	}
+	@media screen and(min-width: 343px) {
+		zoom: 1;
+	}
+}
+.score {
+	position: absolute;
+	top: -2.5rem;
+	left: calc(50% - 3rem);
+
+	width: 5rem;
+	height: 5rem;
+
+	text-align: center;
+
+	color: #CEE79D;
+	border: .5rem solid #77798A;
+	border-radius: 100%;
+	background: #5F5E5E;
+	box-shadow: 0 10px 10px rgba(0,0,0,.5), inset 0 10px 10px rgba(0,0,0,.5);
+	text-shadow: 0 0 2px rgba(0,0,0,.5);
+
+	font-family: 'Righteous', cursive;
+	font-size: 2em;
+	line-height: 5rem;
+}
+.cells {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	margin: 0;
+	padding: 3em;
+
+	border: 1em solid #77798A;
+	border-radius: 100%;
+	background: #1F1B1D;
+	box-shadow: inset 0 10px 10px rgba(0,0,0,.5);
+}
+.cell {
+	position: relative;
+
+	width: var(--cellSize);
+	height: var(--cellSize);
+	margin: 0;
+	padding: 0;
+
+	> input[type='checkbox'] {
+		display: none;
+	}
+
+	> label {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+
+
+
+		&:after {
+			display: block;
+
+			width: calc(var(--cellSize) / 3);
+			height: calc(var(--cellSize) / 3);
+
+			content: '';
+
+			border-radius: 100%;
+			background: radial-gradient(rgba(255, 255, 255, .8) 2%, rgba(255, 255, 255, .2) 5%, rgba(0, 0, 0, .3) 24%);
+			box-shadow: inset 0 1px 5px rgba(255,255,255,.1),
+			inset 0 2px 20px rgba(255,255,255,.07),
+			-80px -15px 15px -5px rgba(0,0,0,.3),
+			0 5px 2px rgba(0,0,0,.2);
+		}
+	}
+	> input[type='checkbox']:checked + label:after {
+		background: radial-gradient(white, yellowgreen);
+
+// box-shadow: 0 0 2px (255,255,0, .9), 0 0 2em rgba(255,255,255, .3);
+		box-shadow: 0 0 10px rgba(255,255,255,.8), 0 0 30px rgba(255,255,255,.8), 0 0 50px rgba(255,255,255,.6), 0 0 70px rgba(255,255,255,.6), -80px -15px 120px 0 rgba(255,255,255,.4);
+	}
+}
+
+.stage {
+	position: absolute;
+
+	width: var(--stageSize);
+	height: var(--stageSize);
+
+	background: url('../img/noria--off.png');
+	background-position: center;
+	background-size: cover;
+	&.spinning {
+		animation: spin 10s infinite linear;
+
+		opacity: 1  ;
+		background: url('../img/noria--on.png');
+		background-position: center;
+		background-size: cover;
+	}
+	@media (max-width:650px) {
+		width: 150vh;
+	}
+}
+
+.btn--solution {
+	position: absolute;
+	bottom: 0;
+	left: calc(50% -  75px) ;
+
+	width: 150px;
+	&,
+	&:link,
+	&:visited {
+		border: 1px solid #E37222;
+		background: transparent;
+	}
+}
+@keyframes marquee {
+	to {
+		background: radial-gradient(red 90%,yellow 91%);
+	}
+}
+
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+
+		filter: hue-rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+
+		filter: hue-rotate(360deg);
+	}
+}
+.board.blinking {
+	.cells,
+	.score {
+		pointer-events: none;
+
+		border-color: #D84CAC;
+		background-color: #117149 ;
+	}
+	label:after {
+		animation: blink 1s infinite linear;
+
+		background: radial-gradient(white, yellowgreen);
+		box-shadow: 0 0 10px rgba(255,255,255,.8), 0 0 30px rgba(255,255,255,.8), 0 0 50px rgba(255,255,255,.6), 0 0 70px rgba(255,255,255,.6), -80px -15px 120px 0 rgba(255,255,255,.4);
+	}
+}
+@keyframes blink {
+	from {
+		background: radial-gradient(rgba(255, 255, 255, .8) 2%, rgba(255, 255, 255, .2) 5%, rgba(0, 0, 0, .3) 24%);
+		box-shadow: inset 0 1px 5px rgba(255,255,255,.1),
+		inset 0 2px 20px rgba(255,255,255,.07),
+		-80px -15px 15px -5px rgba(0,0,0,.3),
+		0 5px 2px rgba(0,0,0,.2);
+	}
+	to {
+		background: radial-gradient(white, yellowgreen);
+		box-shadow: 0 0 10px rgba(255,255,255,.8), 0 0 30px rgba(255,255,255,.8), 0 0 50px rgba(255,255,255,.6), 0 0 70px rgba(255,255,255,.6), -80px -15px 120px 0 rgba(255,255,255,.4);
+	}
+}

@@ -1,0 +1,86 @@
+.hx-btn {
+	transition: $default-transition;
+	text-align: center;
+
+	color: $text-color !important;
+}
+
+.hx-btn--rounded {
+	i {
+		font-size: 1.5em;
+		line-height: 1.5;
+
+		display: block;
+
+		width: 30px;
+		height: 30px;
+		margin: 0 auto;
+
+		border-radius: 50%;
+	}
+}
+
+.hx-btn--outlined {
+	i {
+		transition: $default-transition;
+
+		border: 1px solid $text-color;
+	}
+	&:hover:not(.hx-btn--disabled) {
+		i {
+			color: #FFFFFF;
+			background: $text-color;
+		}
+	}
+}
+
+//BOTONES DE ICONO y de la toolbar
+.hx-toolbar__btn {
+	font-size: .7em;
+overflow: hidden;
+	// flex: 1 0 60px;
+
+	width: 60px; // height: 40px;
+	padding-top: $default-padding/2;
+
+	cursor: pointer; // outline:1px solid red;
+
+transition: $default-transition;
+	text-align: center;
+
+	color: $text-contratipo;
+	border: none;
+	background: transparent;
+}
+
+.hx-btn__ico {
+	width: 30px;
+	height: 30px;
+	padding: $default-padding/4;
+
+	transition: $default-transition;
+
+	border: 1px solid transparent;
+	border-radius: 2px;
+	box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+	.hx-toolbar__btn:hover & {
+		border-color: rgba($turquesa, .7);
+		box-shadow: 0 0 4px rgba(255, 255, 255, .8);
+	}
+}
+
+.hx-btn__text {
+	max-height: 2.2em;
+}
+
+//ESTADOS DE LOS BOTONES
+.hx-btn--disabled {
+	@include disabled();
+}
+
+.hx-btn--active {
+	.hx-btn__ico {
+		border-color: $turquesa;
+		background: rgba(0, 0, 0, .8);
+	}
+}

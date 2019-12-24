@@ -1,0 +1,19 @@
+[iecp-needed=true] {
+	&.board {
+		position: absolute;
+		top: 20%;
+		left: 40%;
+	}
+	&.stage {
+		position: absolute;
+		left: 0;
+	}
+	.cells {
+		flex-basis: auto!important;
+
+		height: 198px!important;
+	}
+	&.spinning {
+		animation: none;
+	}
+}

@@ -1,0 +1,54 @@
+.basic-text {
+	max-width: $max-width;
+	// margin-right: auto;
+	// margin-left: auto;
+
+	&:first-child,
+	&:first-of-type {
+		margin-top: 0;
+	}
+}
+
+.text--narrow {
+	max-width: 80%;
+}
+
+.cite {
+	font-size: 1.5em;
+	font-style: italic;
+
+	max-width: 60%;
+	margin: 0;
+	margin-bottom: 2em;
+	padding-top: $default-padding*3;
+	padding-left: $default-padding*2;
+
+	border-left: 2px solid $brand-primary;
+
+	&--contact {
+		font-size: 1.2em;
+
+		margin: 0;
+		margin-bottom: $default-padding*3;
+
+		li {
+			margin: 0;
+			margin-bottom: $default-padding;
+			padding: 0;
+		}
+
+		li:before {
+			display: none;
+		}
+	}
+}
+
+.lead {
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+.text--big {
+	font-size: 5rem;
+	font-weight: bold;
+}

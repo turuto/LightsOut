@@ -1,0 +1,144 @@
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+@mixin reset() {
+	margin: 0;
+	padding: 0;
+}
+
+// ***********************************************************
+// ## MIXINS BOTONES
+// ***********************************************************
+// MIXIN DEL OUTLINE CUANDO EL BOTON TIENE EL FOCUS O ES ACTIVO
+@mixin tab-focus() {
+	// Default
+	outline: thin dotted $brand-primary; // WebKit
+
+outline: 5px auto $brand-primary;
+	outline-offset: -2px;
+}
+
+// MIXIN VARIACIONES COLORES BOTONES
+@mixin make-button-variant($background, $border, $hover: null) {
+	&,
+	&:link,
+	&:visited {
+		border-color: $border;
+		background-color: $background;
+	}
+
+	&:focus,
+	&.focus {
+		border-color: darken($border, 25%);
+
+		@if ($hover) {
+			background-color: $hover;
+		}
+
+		@else {
+			background-color: darken($background, 10%);
+		}
+	}
+
+	&:hover {
+		border-color: darken($border, 12%);
+
+		@if ($hover) {
+			color: set-text-color($hover);
+			background-color: $hover;
+		}
+
+		@else {
+			background-color: darken($background, 10%);
+		}
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			// extendemos la clase .is--disabled
+			@include disabled();
+
+			border-color: desaturate($border, 10%);
+			background-color: desaturate($background, 30%);
+		}
+	}
+}
+
+//  MIXIN DE VARIACIÓN DE TAMAÑOS DE LOS BOTONES
+@mixin make-button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	font-size: $font-size;
+	line-height: $line-height;
+
+	padding: $padding-vertical $padding-horizontal;
+
+	border-radius: $border-radius;
+}
+
+@mixin make-button-rounded-size ($tam: 1em) {
+	font-size: $tam;
+
+	padding: 0;
+
+	text-align: center; //el icono de dentro no debe de tener margin
+
+	.hx-icon {
+		margin: 0;
+	}
+
+	@if $tam>1.6em {
+		line-height: $tam/2;
+
+		width: $tam;
+		min-width: $tam;
+		max-width: $tam;
+		height: $tam;
+		min-height: $tam;
+		max-height: $tam;
+	}
+
+	@else {
+		line-height: ($tam * 1.5)/2;
+
+		width: ceil(ceil(($tam * 1.5)/2)*2);
+		min-width: ceil(ceil(($tam * 1.5)/2)*2);
+		max-width: ceil(ceil(($tam * 1.5)/2)*2);
+		height: ceil(ceil(($tam * 1.5)/2)*2);
+		min-height: ceil(ceil(($tam * 1.5)/2)*2);
+		max-height: ceil(ceil(($tam * 1.5)/2)*2);
+	}
+}
+
+//mixin que incluye el código que no sea seleccionble un elemento
+@mixin unselectable {
+	cursor: default;
+	user-select: none;
+}
+
+@mixin disabled {
+	user-select: none;
+	pointer-events: none;
+
+	opacity: .5;
+}

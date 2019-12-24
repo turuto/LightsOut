@@ -1,0 +1,173 @@
+.c-list {
+}
+
+.c-hList {
+	display: flex;
+	flex-direction: row;
+}
+
+.basic-list {
+	max-width: 86rem;
+	margin-bottom: $default-padding*1.5;
+
+// margin-right: auto;
+	// margin-left: auto;
+	padding: 0;
+
+	list-style: none;
+}
+
+.basic-list__item {
+	position: relative;
+
+	max-width: 80%;
+	margin-bottom: 1em;
+	margin-left: $default-padding*3;
+
+	// text-indent: -.63em;
+
+	&:before {
+		font: normal normal normal #{$mdi-font-size-base}/1 '#{$mdi-font-name}';
+		font-size: .9em;
+		line-height: inherit;
+
+		position: absolute;
+
+// top: -$default-padding*.2;
+		left: -$default-padding*1.2;
+
+		display: inline-block;
+
+		margin-right: .3em;
+
+// margin-left: -$default-padding*1.8;
+
+		content: '\F415';
+
+		color: $brand-primary;
+
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		;
+	}
+}
+
+.logoList {
+	display: flex;
+	flex-direction: row;
+
+	margin-bottom: $default-padding*4;
+
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	@media(min-width:880px) {
+		max-width: 808px;
+	}
+}
+
+.logoList__item {
+	width: auto;
+	max-height: 60px;
+	margin-right: $default-padding*2;
+
+	filter: grayscale(100%);
+}
+
+.defList {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+
+	&__item {
+		font-size: .8em;
+
+		margin: 0;
+		margin-right: $default-padding;
+		padding-right: $default-padding/2;
+
+		// border: 1px solid cyan;
+	}
+
+	&__label {
+		font-size: .8em;
+
+		margin: 0;
+
+		color: $grey3;
+	}
+
+	&__value {
+		font-weight: bold;
+
+		margin: 0;
+	}
+}
+
+.tagList {
+	display: flex;
+	flex-direction: row;
+
+	margin-top: $default-padding/2;
+
+	flex-wrap: wrap;
+
+	&__item {
+		font-size: .8em;
+		font-weight: bold;
+
+		margin: $default-padding/4;
+		margin-left: 0;
+		padding: $default-padding/4 $default-padding/2;
+
+		color: $secondary-color;
+		border-radius: 5px;
+		background: $white;
+	}
+}
+
+/*
+.list--stripped {
+	width: 80%;
+	max-width: $max-width;
+	margin-right: auto;
+	margin-left: auto; // outline: 1px solid pink;
+	&__item {
+		position: relative;
+
+		padding: 2em 0;
+
+		text-align: center;
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: calc(50% - 50px);
+
+			display: block;
+
+			width: 100px;
+
+			content: '';
+
+			border-bottom: 1px solid $brand-primary;
+		}
+	}
+	&__heading {
+		font-weight: bold;
+
+		text-transform: uppercase;
+	}
+}
+
+.text-list {
+	line-height: 1.8rem;
+}
+*/

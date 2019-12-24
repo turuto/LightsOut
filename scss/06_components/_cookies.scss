@@ -1,0 +1,19 @@
+.cookies {
+	position: fixed;
+	bottom: 0;
+
+	padding-bottom: $default-padding;
+
+	color: $white;
+
+// background: $brand-primary;
+	box-shadow: 0 0 2px rgba($black, .8);
+	&__title {
+		color: inherit;
+	}
+
+	.btn {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}

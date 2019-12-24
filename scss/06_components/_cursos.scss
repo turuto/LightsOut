@@ -1,0 +1,78 @@
+.cursos {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+
+	justify-content: flex-start;
+
+	&__item .card__body {
+		position: relative;
+
+		// overflow: hidden;
+	}
+
+	@media(min-width:$breakpoint--md) {
+		flex-direction: row;
+
+		&__item {
+			max-width: 400px;
+			margin: $default-padding;
+		}
+
+		&__item:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+//los cursos nunca se ponen en row
+.curso .card__link {
+	flex-direction: column;
+}
+
+.curso__title {
+	flex-direction: row;
+
+	margin-top: 1em;
+
+	.page__heading {
+		flex: 1;
+
+		margin-bottom: $default-padding*1.5;
+	}
+}
+
+.curso .card__img {
+	max-height: 100px;
+}
+
+.curso__feature--special {
+	font-size: .8rem;
+	font-weight: bold;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	display: block;
+
+	padding: $default-padding/3 $default-padding;
+
+	text-align: center;
+
+	color: $white;
+	background: $secondary-color;
+	box-shadow: $thin-shadow;
+	text-shadow: $thin-shadow;
+}
+
+.cursoDetalle {
+	position: relative;
+}
+
+@media(min-width:$breakpoint--md) {
+	.post.curso .container {
+		flex-direction: row-reverse;
+	}
+}

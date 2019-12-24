@@ -1,0 +1,32 @@
+.media {
+	display: flex;
+
+	margin: 0 $default-padding;
+	margin-bottom: 1em;
+
+	color: inherit;
+
+	align-items: flex-start;
+}
+
+.media__img {
+	display: flex;
+	flex-direction: column;
+	flex: 0;
+
+	min-width: 150px;
+	margin-right: 1em;
+	 > img {
+		width: 100%;
+	}
+}
+
+.media__body {
+	flex: 1; // display: block;
+}
+
+.media--reverse > .media__img {
+	margin: 0 0 0 1em;
+
+	order: 1;
+}

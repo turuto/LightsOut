@@ -1,0 +1,185 @@
+.footer {
+	font-size: .95em;
+
+	padding-bottom: 0;
+
+	color: $text-contratipo;
+	background: $bg-color--dark;
+}
+
+.footer__pre {
+	padding: 4em $page-padding $default-padding*3;
+
+	text-align: center;
+
+	color: $text-color;
+
+	.section__title {
+		border: none;
+	}
+}
+
+// el bloque de socios lo eliminamos de la página de socios
+.l-body--socios .footer__pre {
+	display: none;
+}
+
+.footer__ending {
+	font-size: .9em;
+
+	width: 100%;
+	margin-top: $default-padding*4;
+	padding: $default-padding/2 0;
+
+	text-align: center;
+
+	color: $black;
+	border-top: 1px solid currentColor;
+	background: $white;
+}
+
+.footer__upper {
+	display: flex;
+	flex-direction: column;
+
+	padding-top: $default-padding*3;
+
+	text-align: center;
+
+	justify-content: flex-start;
+	align-content: center;
+}
+
+.footer__brand {
+	width: 12rem;
+	margin: 0 auto;
+	margin-bottom: $default-padding;
+	padding-left: 1.15rem;
+}
+
+.footer__social {
+	font-size: 1.1em;
+
+	display: flex;
+
+	width: 100%;
+	max-width: 10em;
+	margin: 0 auto;
+	margin-top: $default-padding/2;
+
+	justify-content: space-between;
+}
+
+.contact__item {
+	margin-bottom: $default-padding/2;
+}
+
+.contact__link:before {
+	margin-right: $default-padding/2;
+}
+
+/*
+.footer__title {
+	font-size: 3em;
+	font-weight: bold;
+
+	width: 100%;
+	padding-bottom: .75em;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: inherit;
+}
+
+//lista de contacto en pantallas pequeñas
+.contact-list {
+	display: flex;
+
+	list-style: none;
+
+	justify-content: space-between;
+}
+
+.contact__item {
+	flex: 1 1 100%;
+}
+
+.contact__link {
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+
+	align-items: center;
+	&:before {
+		font-size: 2em;
+
+		display: block;
+
+		margin: 0 auto .5em;
+	}
+}
+
+.footer a {
+	&:link,
+	&:visited {
+		color: currentColor;
+	}
+	&:hover,
+	&:active {
+		color: $brand-primary;
+	}
+}
+
+@media(min-width:880px) {
+	.footer {
+		display: flex;
+		flex-direction: row;
+
+		justify-content: flex-start;
+		align-items: flex-end;
+		flex-wrap: wrap;
+	}
+	.footer__data {
+		flex: 1;
+
+		box-sizing: border-box;
+		padding-right: 2em;
+
+		align-self: baseline;
+	}
+	.footer__map {
+		flex: 1;
+
+		max-width: 640px;
+		margin: 0 0 1em;
+	}
+	.contact-list {
+		flex-direction: column;
+	}
+	.contact__item {
+		margin-bottom: 2em;
+	}
+	.contact__link {
+		display: block;
+
+		text-align: left;
+		&:before {
+			font-size: 10px;
+			font-size: 1rem;
+
+			display: inline-block;
+
+			margin: 0;
+			margin-right: 1em;
+		}
+	}
+	.footer__title {
+		margin-top: 0;
+
+		text-align: left;
+	}
+}
+
+*/

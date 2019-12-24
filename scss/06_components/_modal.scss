@@ -1,0 +1,109 @@
+/* [Object] Modal
+ * =============================== */
+
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	visibility: hidden;
+
+	transition: opacity .25s ease;
+	text-align: left;
+
+	opacity: 0;
+	background: rgba(0, 0, 0, .9);
+}
+
+.modal__bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	cursor: pointer;
+}
+
+.modal__state {
+	display: none;
+}
+
+.modal__state:checked + .modal {
+	visibility: visible;
+
+	opacity: 1;
+}
+
+.modal__state:checked + .modal .modal__inner {
+	top: 0;
+}
+
+.modal__inner {
+	position: absolute;
+	top: -20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	overflow: auto;
+
+	width: $max-width;
+	max-width: 90%;
+	height: 90%;
+	margin: auto;
+	padding: 1em 2em;
+
+	transition: top .25s ease;
+
+	border-radius: 5px;
+	background: #FFFFFF;
+}
+
+.modal__close {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+
+	width: 1.1em;
+	height: 1.1em;
+
+	cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+	position: absolute;
+	top: 0;
+	left: 50%;
+
+	display: block;
+
+	width: 2px;
+	height: 1.5em;
+	margin: -3px 0 0 -1px;
+
+	content: '';
+	transform: rotate(45deg);
+
+	background: #CCCCCC;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+	background: #AAAAAA;
+}
+
+.modal__close:before {
+	transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+	.modal__inner {
+		box-sizing: border-box;
+		width: 90%;
+		height: 90%;
+	}
+}

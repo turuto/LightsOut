@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SIVSA te desea Felices Fiestas</title>
+    <meta property="og:title" content="Sivsa te desea Feliz Navidad">
+    <meta property="og:description" content="Sivsa te desea Feliz Navidad">
+    <meta property="og:image" content="img/social-img.jpg">
+    <meta property="og:url" content="https:///www.sivsa.com/site/navidad">
+    <meta name="twitter:card" content="https:///www.sivsa.com/site/navidad">
+ <link href="https://fonts.googleapis.com/css?family=Bitter:400i,700|Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // window.MSInputMethodContext && document.documentMode &&
+        document.write('<script src="js/ie11CustomProperties.js"><\x2fscript>');
+    </script>
+</head>
+
+<body onLoad="setStage()">
+    <div class="stage "></div>
+    <div class="board ">
+        <div class="score">0</div>
+        <div class="cells">
+            <div class="cell"><input type="checkbox" data-index=0 id="cell0" value="0"><label for="cell0"></label></div>
+            <div class="cell"><input type="checkbox" data-index=1 id="cell1" value="0"><label for="cell1"></label></div>
+            <div class="cell"><input type="checkbox" data-index=2 id="cell2" value="0"><label for="cell2"></label></div>
+            <div class="cell"><input type="checkbox" data-index=3 id="cell3" value="0"><label for="cell3"></label></div>
+            <div class="cell"><input type="checkbox" data-index=4 id="cell4" value="0"><label for="cell4"></label></div>
+            <div class="cell"><input type="checkbox" data-index=5 id="cell5" value="0"><label for="cell5"></label></div>
+            <div class="cell"><input type="checkbox" data-index=6 id="cell6" value="0"><label for="cell6"></label></div>
+            <div class="cell"><input type="checkbox" data-index=7 id="cell7" value="0"><label for="cell7"></label></div>
+            <div class="cell"><input type="checkbox" data-index=8 id="cell8" value="0"><label for="cell8"></label></div>
+            <div class="cell"><input type="checkbox" data-index=9 id="cell9" value="0"><label for="cell9"></label></div>
+            <div class="cell"><input type="checkbox" data-index=10 id="cell10" value="0"><label for="cell10"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=11 id="cell11" value="0"><label for="cell11"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=12 id="cell12" value="0"><label for="cell12"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=13 id="cell13" value="0"><label for="cell13"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=14 id="cell14" value="0"><label for="cell14"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=15 id="cell15" value="0"><label for="cell15"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=16 id="cell16" value="0"><label for="cell16"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=17 id="cell17" value="0"><label for="cell17"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=18 id="cell18" value="0"><label for="cell18"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=19 id="cell19" value="0"><label for="cell19"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=20 id="cell20" value="0"><label for="cell20"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=21 id="cell21" value="0"><label for="cell21"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=22 id="cell22" value="0"><label for="cell22"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=23 id="cell23" value="0"><label for="cell23"></label>
+            </div>
+            <div class="cell"><input type="checkbox" data-index=24 id="cell24" value="0"><label for="cell24"></label>
+            </div>
+        </div>
+    </div>
+    <div class="dialog">
+        <div class="dialog__overlay a-fadeIn"></div>
+        <div class="dialog__modal modal a-swipeDown" id="modal-instructions">
+            <div class="modal__header"><img class="logo" src="img/felizNavidad.png"
+                    alt="SIvsa te desea Feliz Navidad y Feliz 2020">
+            </div>
+            <div class="modal__body">
+                <p>
+                    Este año, en SIVSA nos hemos desplazado a lo alto de la noria de Vigo, pero para hacerla funcionar
+                    tenemos que
+                    conseguir encender todas las luces de su círculo central.
+                </p>
+                <p>Lo que ocurre es que al tocar una bombilla, esto provocará que cambie el estado de las cuatro luces
+                    vecinas. Pero encendiendo y apagando luces, es posible encenderlas todas.</p>
+                <p>A ver en cuantos clics lo consigues!!</p>
+            </div>
+            <button class="btn modal__btn" onclick="initGame()">JUGAR!</button>
+            <div class="modal__footer">Fotografía de fondo, cortesía de <a
+                    href="https://www.instagram.com/brod_a_secas/?fbclid=IwAR14iIPoCkkZ74CLNTLpzLZeju8WHPBeMzhrihKh9SKoDliVlOh46fiDB7Q"
+                    target="_blank">Bruno
+                    Rodríguez</a></div>
+        </div>
+        <div class="dialog__modal modal isHidden" id="modal-levelUp">
+            <div class="modal__header">Felicidades</div>
+            <div class="modal__body">
+                <p> Quieres intentarlo de nuevo con la máxima dificultad?</p>
+            </div>
+            <button class="btn  modal__btn" onclick="initGame()">JUGAR MÁS!</button>
+        </div>
+    </div>
+    <button class="btn  btn--solution" id="btn-solution" onclick="endGame()">¿Te rindes?</button>
+    <script src="js/game.min.js"></script>
+</body>
+
+</html>

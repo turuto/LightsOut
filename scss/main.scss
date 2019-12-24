@@ -1,0 +1,47 @@
+@charset 'UTF-8';
+@import '00_external/normalize';
+/*1.-SETTINGS*/
+
+// @import '01_settings/_paths';
+@import '01_settings/_variables';
+// /*2.-TOOLS*/
+
+// @import '../lib/mdi/scss/materialdesignicons.scss';
+// // @import '02_tools/_helpers';
+// // @import '02_tools/_functions';
+@import '02_tools/_mixins';
+// /*3.-GENERIC*/
+
+// /*4.-BASE*/
+
+@import '04_base/_base';
+// @import '04_base/_layout';Ç
+// /*5.-OBJECTS*/
+
+// /*6.-COMPONENTS*/
+
+@import '06_components/_game';
+@import '06_components/_dialog';
+@import '06_components/_buttons';
+// @import '06_components/_cards';
+// @import '06_components/_sections';
+// @import '06_components/_features';
+// @import '06_components/_pages';
+// @import '06_components/_posts';
+// @import '06_components/_cursos';
+// @import '06_components/_footer';
+// @import '06_components/_header';
+// @import '06_components/_hero';
+// @import '06_components/_lists';
+// @import '06_components/_text';
+// @import '06_components/_news';
+// @import '06_components/_social';
+// @import '06_components/_cookies';
+// @import '06_components/_video';
+// /*7.-THEME*/
+
+// /*8.-WINS*/
+
+@import '08_wins/_utilities';
+@import '08_wins/_ie11';
+@import '08_wins/_debug';

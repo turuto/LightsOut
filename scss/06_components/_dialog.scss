@@ -1,0 +1,106 @@
+.dialog {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(0,0,0,.6);
+
+	font-style: italic;
+}
+.dialog__modal {
+	width: 80%;
+	max-width: 500px;
+	padding: $default-padding;
+	padding-bottom: 0;
+
+	text-align: center;
+
+// color: #6E4E82;
+
+	color: #D5E2F7;
+	border-radius: 20px 0;
+	background: linear-gradient(to bottom left, #A4D7D8, #465679);
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+
+	p {
+		color: currentColor;
+		text-shadow: 0 0 2px rgba(0,0,0,.2);
+	}
+}
+.modal__header {
+	margin-top: $default-padding*2;
+	margin-bottom: 0;
+
+// margin-bottom: $default-padding;
+
+	font-size: 3rem;
+
+	.logo {
+		width: unset;
+	}
+}
+.modal__btn {
+	margin-bottom: $default-padding*3;
+}
+.modal__footer {
+	margin-bottom: $default-padding;
+
+	font-size: .9em;
+	a {
+		text-decoration: underline;
+		&:hover,
+		&:active,
+		&:focus {
+			color: rgb(255, 181, 128);
+		}
+	}
+}
+
+.a-swipeDown {
+	animation: swipeDown 1s ease-in-out 1;
+}
+.a-swipeUp {
+	animation: swipeUp 1s ease-in-out 1;
+}
+.a-fadeIn {
+	animation: fadeIn .5 ease-in-out 1;
+}
+.a-fadeOut {
+	animation: fadeOut .5 ease-in-out 1;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	} to {
+		opacity: 1;
+	}
+}
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	} to {
+		opacity: 0;
+	}
+}
+
+@keyframes swipeDown {
+	from {
+		transform: translateY(-1000px);
+	} to {
+		transform: translateY(0);
+	}
+}
+@keyframes swipeUp {
+	from {
+		transform: translateY(0);
+	} to {
+		transform: translateY(-1000px);
+	}
+}

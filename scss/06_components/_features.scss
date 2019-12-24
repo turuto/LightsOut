@@ -1,0 +1,154 @@
+.featured {
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item {
+		position: relative;
+
+		display: flex;
+		overflow: hidden;
+		flex-direction: row;
+
+		min-height: unset;
+
+		transition: $default-transition;
+
+		border: none;
+
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+
+		&:not(.featured__item--basic) {
+			margin: 0;
+
+			background: $white;
+
+			.featured__body {
+				// width: 100%;
+				// border: 1px solid $grey2;
+				align-self: stretch;
+			}
+		}
+
+		&:not(.featured__item--basic) {
+			&:hover,
+			&:active,
+			&:focus {
+				color: $white;
+				background: $brand-primary;
+				box-shadow: $default-shadow, $wide-shadow;
+
+				.featured__pic {
+					transform: scale(1.05) translateX(-2.5%);
+
+					filter: saturate(1);
+				}
+
+				.featured__body {
+					border-color: $grey3;
+				}
+			}
+		}
+	}
+
+	&__pic {
+		position: relative;
+
+		overflow: hidden;
+
+		width: 30%;
+
+		transition: $default-transition;
+
+		background-position: center;
+		background-size: cover;
+
+		filter: grayscale(50%);
+		align-self: stretch;
+
+		/*&:after {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			content: '';
+
+			background: rgba($secondary-color, .5);
+
+			// mix-blend-mode: overlay;
+		}*/
+	}
+
+	&__body {
+		flex: 1;
+
+		padding: 0 $default-padding;
+	}
+
+	&__img {
+		position: absolute;
+
+		transition: $default-transition;
+	}
+
+	&__title {
+		font-size: 1.8em;
+
+		margin-bottom: 0;
+
+		text-align: inherit;
+	}
+}
+
+.featured__item--basic {
+	display: block;
+
+	text-align: left;
+}
+
+@media(min-width:$breakpoint--md) {
+}
+
+@media(min-width:$breakpoint--lg) {
+	.featured {
+		.container {
+			flex-direction: row;
+
+			justify-content: center;
+		}
+	}
+
+	.featured__item {
+		flex-direction: column;
+		flex: 1;
+
+		text-align: center;
+
+		&:not(.featured__item--basic) {
+			flex: 1 1 0;
+
+			&:hover,
+			&:active,
+			&:focus {
+				.featured__pic {
+					transform: scale(1.05) translate(0, -2.5%);
+				}
+			}
+		}
+	}
+
+	.featured__pic {
+		width: auto;
+		height: 200px;
+	}
+
+	.featured__item--basic {
+		text-align: center;
+	}
+}

@@ -1,0 +1,9 @@
+//## TIPOGRAFÍA
+//Cambia el color del texto en función del color de fondo
+@function set-text-color($color) {
+	@if (lightness($color) > 65) {
+		@return $text-color; // Fondo Claro, devuelve color oscuro
+		} @else {
+		@return $text-contratipo; // Fondo Oscuro, devuelve contratipo
+	}
+}

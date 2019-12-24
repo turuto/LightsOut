@@ -1,0 +1,147 @@
+.post {
+	position: relative;
+
+	overflow: hidden;
+}
+
+.post__title {
+	flex-direction: column;
+
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.post__date {
+	z-index: 3;
+}
+
+.post .container {
+	display: flex;
+	flex-direction: column;
+
+	padding-bottom: 0;
+
+	align-items: stretch;
+}
+
+.post__content {
+	flex: 1;
+
+	padding: $default-padding*2 0;
+
+	img {
+		width: 100%;
+
+		@media (min-width:$breakpoint--lg) {
+			float: left;
+
+			max-width: 30em;
+			margin: $default-padding;
+			margin-left: 0;
+		}
+	}
+}
+
+.post__aside {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 20rem;
+	padding: $default-padding;
+	padding-left: 0;
+
+// background: pink;
+
+	flex-wrap: nowrap;
+}
+
+.aside__section {
+	padding: $default-padding 0;
+	padding-right: $default-padding;
+
+	// color: $text-color;
+
+	// outline: 1px solid cyan;
+	&--special {
+		font-weight: bold;
+
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		padding: $default-padding 0;
+
+		text-align: center;
+
+		color: white;
+		background: $secondary-color;
+		box-shadow: $thin-shadow;
+		text-shadow: $thin-shadow;
+	}
+
+	.section__title {
+		font-size: 1rem;
+
+		margin-bottom: 0;
+
+// color: $white;
+
+		border-bottom: 1px solid rgba($text-color, .2);
+	}
+
+	p {
+		line-height: 1em;
+
+		margin: 0;
+		margin-top: $default-padding/2;
+	}
+}
+
+@media(min-width:400px) {
+	.post__aside {
+		flex-direction: row;
+	}
+}
+
+@media(min-width:579px) {
+	.aside__section--special {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: unset;
+
+		width: auto;
+		padding: $default-padding/2 97px;
+
+		transform: rotate(45deg) translate(129px, -29px);
+	}
+}
+
+@media(min-width:$breakpoint--md) {
+	// .post .container {
+	// 	flex-direction: row-reverse;
+	// }
+
+	// .post__title .container {
+	// 	flex-direction: row;
+	// }
+
+	.post__content {
+		padding-right: $default-padding;
+	}
+
+	.post__aside {
+		flex-direction: column;
+
+		padding-left: $default-padding;
+
+		color: $white;
+		border-left: 1px solid $grey2;
+		background: lighten(desaturate($secondary-color, 70%), 30%);
+	}
+
+	.aside__section {
+	}
+}
